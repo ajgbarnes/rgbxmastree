@@ -12,6 +12,7 @@ def on_message(client, obj, msg):
     colorValue = msg.payload.decode('UTF-8')
     print(colorValue)
     tree.color=Color(colorValue)
+    print(msg.topic)
 
 def on_log(client, obj, level, msg):
     print(msg)
@@ -24,5 +25,6 @@ client.on_message = on_message
 #client.on_log = on_log
 
 client.connect("mqtt.cheerlights.com", 1883, 60)
+client.subscribe("cheerlightsRGB")
 
 client.loop_forever()
