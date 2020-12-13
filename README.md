@@ -125,3 +125,21 @@ Cycle through hues forever
 Randomly sparkle all the pixels
 
 - [randomsparkles.py](examples/randomsparkles.py)
+
+### Cheerlights via MQTT by ajgbarnes
+
+Subscribes to the colour changes from Cheerlights. CheerLights is an “Internet of Things” project created by Hans Scharler that allows people's lights all across the world to synchronize to one color set by Twitter.  To change the colour, from your Twitter account send a message to @Cheerlights using on of the valid colours described on this page https://cheerlights.com/cheerlights-api/
+
+To run this 
+```
+pip3 install paho-mqtt
+python3 cheerlights.py
+```
+
+To autostart this on boot of the Raspberry Pi
+```
+sudo pip3 install paho-mqtt
+python3 /path/to/files/cheerlights.py &
+```
+
+- [cheerlights.py](cheerlights.py)
