@@ -10,6 +10,12 @@ Start by downloading the xmas tree file. Open a terminal and type:
 wget https://bit.ly/2Lr9CT3 -O tree.py
 ```
 
+Install the `colorzero` package
+```
+sudo apt update
+sudo apt install python-colorzero python3-colorzero
+```
+
 When you write your own Python code, make sure you keep this file in the same
 folder.
 
