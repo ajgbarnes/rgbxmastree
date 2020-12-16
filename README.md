@@ -132,9 +132,19 @@ Randomly sparkle all the pixels
 
 - [randomsparkles.py](examples/randomsparkles.py)
 
+### Cheerlights via HTTP by ajgbarnes
+Subscribes to the colour changes from Cheerlights. CheerLights is an “Internet of Things” project created by Hans Scharler that allows people's lights all across the world to synchronize to one color set by Twitter.  To change the colour, from your Twitter account send a message to @Cheerlights using on of the valid colours described on this page https://cheerlights.com/cheerlights-api/
+
+To run this 
+```
+python3 cheerlights-http.py
+```
+
+- [cheerlights-http.py](cheerlights-http.py)
+
 ### Cheerlights via MQTT by ajgbarnes
 
-Subscribes to the colour changes from Cheerlights. CheerLights is an “Internet of Things” project created by Hans Scharler that allows people's lights all across the world to synchronize to one color set by Twitter.  To change the colour, from your Twitter account send a message to @Cheerlights using on of the valid colours described on this page https://cheerlights.com/cheerlights-api/
+Similar to above but subscribes to the MQTT feed so you never miss a colour update. MQTT queues them so you get an update every 30 seconds rather than rapidly as they happen.  
 
 To run this 
 ```
