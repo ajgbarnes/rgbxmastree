@@ -132,7 +132,8 @@ Randomly sparkle all the pixels
 
 - [randomsparkles.py](examples/randomsparkles.py)
 
-### Cheerlights via HTTP by ajgbarnes
+### Cheerlights (via HTTP) by ajgbarnes
+
 Subscribes to the colour changes from Cheerlights. CheerLights is an “Internet of Things” project created by Hans Scharler that allows people's lights all across the world to synchronize to one color set by Twitter.  To change the colour, from your Twitter account send a message to @Cheerlights using on of the valid colours described on this page https://cheerlights.com/cheerlights-api/
 
 To run this 
@@ -142,14 +143,25 @@ python3 cheerlights-http.py
 
 - [cheerlights-http.py](cheerlights-http.py)
 
-### Cheerlights via MQTT by ajgbarnes
+### Cheerlights History (via HTTP) by ajgbarnes
 
-Similar to above but subscribes to the MQTT feed so you never miss a colour update. MQTT queues them so you get an update every 30 seconds rather than rapidly as they happen.  
+Similar to Cheerlights (via HTTP) but lights a new led / bauble each time a new colour comes through
+
+To run this 
+```
+python3 cheerlights-history-http.py
+```
+
+- [cheerlights-history-http.py](cheerlights-history-http.py)
+
+### Cheerlights (via MQTT) by ajgbarnes
+
+Similar to Cheerlights (via HTTP) but subscribes to the MQTT feed so you never miss a colour update. MQTT queues them so you get an update every 30 seconds rather than rapidly as they happen.  
 
 To run this 
 ```
 pip3 install paho-mqtt
-python3 cheerlights.py
+python3 cheerlights-mqtt.py
 ```
 
 To autostart this on boot of the Raspberry Pi
@@ -158,4 +170,15 @@ sudo pip3 install paho-mqtt
 python3 /path/to/files/cheerlights.py &
 ```
 
-- [cheerlights.py](cheerlights.py)
+- [cheerlights-mqtt.py](cheerlights-mqtt.py)
+
+### Cheerlights History (via MQTT) by ajgbarnes
+
+Similar to Cheerlights (via MQTT) but lights a new led / bauble each time a new colour comes through
+
+To run this 
+```
+python3 cheerlights-history-mqtt.py
+```
+
+- [cheerlights-history-mqtt.py](cheerlights-history-mqtt.py)
