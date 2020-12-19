@@ -6,9 +6,8 @@ import time
 refreshInterval = 30
 
 bright=0.1
-colorUrl = "http://api.thingspeak.com/channels/1417/field/2/last.json"
+feedUrl = "http://api.thingspeak.com/channels/1417/feed.json"
 
-currentLED = 0
 currentColor = '#000000'
 
 tree = RGBXmasTree(brightness=bright)
@@ -16,11 +15,13 @@ tree = RGBXmasTree(brightness=bright)
 tree.color=Color('#000000')
 
 while True:
-    r = requests.get(url=colorUrl)
-    color = r.json()['field2']
-    print(color)
-    if(color != currentColor):
-       tree[currentLED].color=Color(color)
-       currentColor = color
-       currentLED = (currentLED +1)%25
+    try: 
+        f=requests.get(url=feedUrl)
+        length=len(f.json()['feeds'])
+        for x in range(25):
+            pos=(length-x)-1
+            color=f.json()['feeds'][pos]['field2']
+            tree[x].color=Color(color)
+    except Exception:
+        pass
     time.sleep(refreshInterval)
